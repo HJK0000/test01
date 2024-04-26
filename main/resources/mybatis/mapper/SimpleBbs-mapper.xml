@@ -1,0 +1,9 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.example.test01.dao.ISimpleBbsDao"> <!--사용할 인터페이스 경로 + 파일이름까지 적어주기--> <!--경로에 오타안나게 조심하기!!! 오타자주나면 dao, dto파일에서 복사해서 붙여넣기-->
+	<select id="getList" resultType="com.example.test01.domain.SimpleBbsDto"> <!-- 인터페이스에서 SimpleBbsDto에서 자료를 받아와서 리스트를 만드니까 SimpleBbsDto 까지의 경로를 써준다. -->
+		SELECT * FROM simpleBBS		
+	</select>	
+</mapper>
