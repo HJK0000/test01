@@ -9,13 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>List Page</h1>
+    <h1>Detail Page</h1>
     <hr>
-    <div>
-        <a href="writeForm">글 작성하기</a>
-    </div>
-    <c:forEach var="dto" items="${list}">
-        ${dto.id} / ${dto.writer} / <a href="detail?id=${dto.id}">${dto.title}</a><br>
-    </c:forEach>
+    ${dto.id} / ${dto.writer} / ${dto.title} / ${dto.content}
+    <a href="delete?id=${dto.id}">삭제</a>
+    <a href="list">목록보기</a>
 </body>
 </html>

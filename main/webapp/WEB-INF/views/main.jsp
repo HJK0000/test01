@@ -10,7 +10,7 @@
 <body>
     <h1>main page</h1>
     <hr>
-
     <a href="list">목록보기</a>
+    <a href="command?writer=ccc&title=ddd&content=ccc">커맨드객체 연습결과 페이지</a>
 </body>
 </html>

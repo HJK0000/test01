@@ -5,5 +5,25 @@
 <mapper namespace="com.example.test01.dao.ISimpleBbsDao"> <!--사용할 인터페이스 경로 + 파일이름까지 적어주기--> <!--경로에 오타안나게 조심하기!!! 오타자주나면 dao, dto파일에서 복사해서 붙여넣기-->
 	<select id="getList" resultType="com.example.test01.domain.SimpleBbsDto"> <!-- 인터페이스에서 SimpleBbsDto에서 자료를 받아와서 리스트를 만드니까 SimpleBbsDto 까지의 경로를 써준다. -->
 		SELECT * FROM simpleBBS		
-	</select>	
+	</select>
+	<select id="getDto">
+		SELECT * FROM simpleBBS WHERE id = #{id}		
+	</select>
+	<insert id="write"> <!--id는 매서드 이름-->
+		INSERT INTO simpleBBS (writer, title, content) VALUES (#{param1}, #{param2}, #{param3}) 	<!--mybatis에서 파라미터 처리하는 방식.. param하고 순서대로 써준다.-->	
+	</insert>
+	<insert id="write2">
+		INSERT INTO simpleBBS (writer, title, content) VALUES (#{arg0}, #{arg1}, #{arg2})
+	</insert>
+<!--	<insert id="write2"> 
+		INSERT INTO simpleBBS (writer, title, content) VALUES (#{writer}, #{title}, #{content})
+	</insert> -->
+	<insert id="write3">
+		INSERT INTO simpleBBS (writer, title, content) VALUES (#{dto.writer}, #{dto.title}, #{dto.content})		
+	</insert>
+	<delete id="delete">
+		
+		DELETE FROM simpleBBS WHERE id = #{id}
+		
+	</delete>
 </mapper>
